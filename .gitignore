@@ -1,0 +1,41 @@
+# Credenciales - NUNCA subir al repo
+.env
+*.env
+
+# Datos raw (pueden ser pesados)
+data/raw/
+data/external/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Entornos virtuales
+env/
+venv/
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Power BI (archivos de caché)
+dashboard/*.pbix.lock
+dashboard/cache/
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

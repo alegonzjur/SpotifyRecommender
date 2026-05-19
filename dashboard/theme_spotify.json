@@ -1,0 +1,16 @@
+{
+  "name": "Spotify Recommender Theme",
+  "dataColors": [
+    "#1DB954",
+    "#1ED760",
+    "#535353",
+    "#B3B3B3",
+    "#E8E8E8",
+    "#121212",
+    "#282828",
+    "#404040"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#191414",
+  "tableAccent": "#1DB954"
+}
