@@ -1,10 +1,9 @@
 # 🎵 Spotify Music Recommender
 
-Sistema de análisis y recomendación musical construido sobre la API oficial de Spotify.
+Sistema de análisis y recomendación musical construido sobre la API oficial de Spotify. Actualmente, Spotify ha eliminado el acceso a las características de audio desde su API, por tanto, se utilizará un dataset recolectado previamente a la creación de las restricciones de la API.
 
 ## Objetivos del proyecto
 
-- Construir un dataset propio mediante la Spotify Web API
 - Realizar análisis exploratorio de características de audio
 - Segmentar canciones mediante técnicas de clustering
 - Desarrollar un sistema recomendador híbrido (content-based + collaborative filtering)
@@ -19,12 +18,10 @@ spotify-recommender/
 │   ├── processed/          # Datos limpios y transformados
 │   └── external/           # Datasets de terceros (Last.fm, Kaggle)
 ├── notebooks/
-│   ├── 01_spotify_api_exploration.ipynb
-│   ├── 02_eda_audio_features.ipynb
-│   ├── 03_clustering.ipynb
-│   └── 04_recommender_model.ipynb
+│   ├── 01_eda_audio_features.ipynb
+│   ├── 02_clustering.ipynb
+│   └── 03_recommender_model.ipynb
 ├── src/
-│   ├── api/                # Cliente Spotify API y extracción de datos
 │   ├── data/               # Limpieza, transformación y carga
 │   ├── models/             # Modelos de recomendación
 │   └── visualization/      # Helpers de visualización
@@ -57,26 +54,18 @@ cp .env.example .env
 # Editar .env con tus credenciales de Spotify Developer
 ```
 
-## Credenciales Spotify
-
-1. Accede a [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-2. Crea una nueva app
-3. Copia `Client ID` y `Client Secret` en tu archivo `.env`
-
 ## Fases del proyecto
 
 | Fase | Descripción | Estado |
 |------|-------------|--------|
-| 1 | Extracción de datos vía API | 🔄 En progreso |
-| 2 | EDA y caracterización | ⏳ Pendiente |
-| 3 | Clustering de canciones | ⏳ Pendiente |
-| 4 | Modelo recomendador | ⏳ Pendiente |
-| 5 | Dashboard Power BI | ⏳ Pendiente |
-| 6 | API REST de recomendaciones | ⏳ Pendiente |
+| 1 | EDA y caracterización | 🔄 En progreso |
+| 2 | Clustering de canciones | ⏳ Pendiente |
+| 3 | Modelo recomendador | ⏳ Pendiente |
+| 4 | Dashboard Power BI | ⏳ Pendiente |
+| 5 | API REST de recomendaciones | ⏳ Pendiente |
 
 ## Stack tecnológico
 
-- **Extracción**: Spotipy (Python wrapper Spotify API)
 - **Análisis**: pandas, numpy, scikit-learn
 - **Visualización**: matplotlib, seaborn, plotly
 - **Dashboard**: Power BI Desktop
