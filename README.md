@@ -17,7 +17,8 @@ SpotifyMusicRecommender/
 ├── data/
 │   ├── raw/                          # Dataset original de Kaggle
 │   ├── processed/                    # Datos limpios y transformados
-│   └── external/                     # Datasets de terceros
+│   ├── external/                     # Datasets de terceros
+│   └── img/                          # Imágenes para la documentación
 ├── notebooks/
 │   ├── 02_eda_audio_features.ipynb   # Análisis exploratorio
 │   ├── 03_clustering.ipynb           # Segmentación K-Means
@@ -26,7 +27,14 @@ SpotifyMusicRecommender/
 │   ├── api/                          # Cliente Spotify API (OAuth)
 │   ├── data/                         # Limpieza y transformación
 │   ├── models/                       # Modelos entrenados
-│   └── visualization/                # Helpers de visualización
+│   ├── visualization/                # Helpers de visualización
+│   └── app/                          # Aplicación web Flask
+│       ├── app.py
+│       ├── static/
+│       │   ├── style.css
+│       │   └── script.js
+│       └── templates/
+│           └── index.html
 ├── dashboard/                        # Dashboard Power BI (.pbix) y tema
 ├── reports/
 │   └── figures/                      # Gráficos exportados
@@ -136,6 +144,60 @@ Dashboard interactivo de 5 páginas construido sobre el dataset procesado:
 
 ---
 
+## 🌐 Aplicación Web
+ 
+Interfaz web construida con **Flask** que permite interactuar con el modelo recomendador de forma visual.
+ 
+![Interfaz principal](data/img/Hub.png)
+![Recomendaciones](data/img/Recomendaciones.png)
+ 
+**Características:**
+- Búsqueda por título de canción con artista opcional
+- Selección del número de recomendaciones (5, 10, 15 o 20)
+- Tarjetas animadas con barra de similitud
+- Manejo de errores y estado de carga
+**Arrancar la aplicación:**
+ 
+```bash
+conda activate spotify-recommender
+cd src/app
+python app.py
+```
+ 
+Abre `http://localhost:5000` en el navegador.
+ 
+**Endpoints disponibles:**
+ 
+| Endpoint | Descripción |
+|----------|-------------|
+| `GET /` | Interfaz web principal |
+| `GET /health` | Estado de la API y número de canciones cargadas |
+| `GET /recomendar?titulo=...&artista=...&n=10` | Devuelve JSON con recomendaciones |
+ 
+---
+
+## ⚙️ Instalación
+ 
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/alegonzjur/SpotifyMusicRecommender.git
+cd SpotifyMusicRecommender
+ 
+# 2. Crear entorno virtual
+conda create -n spotify-recommender python=3.11
+conda activate spotify-recommender
+ 
+# 3. Instalar dependencias
+pip install -r requirements.txt
+ 
+# 4. Descargar el dataset
+# https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset
+# Colocar dataset.csv en data/raw/
+```
+ 
+---
+
+
 ## 🛠️ Stack tecnológico
 
 | Categoría        | Herramientas                |
@@ -145,7 +207,21 @@ Dashboard interactivo de 5 páginas construido sobre el dataset procesado:
 | Machine Learning | scikit-learn                |
 | Visualización    | matplotlib, seaborn, plotly |
 | Dashboard        | Power BI Desktop            |
+| Aplicación web | Flask, HTML, CSS, JavaScript |
 | Entorno          | Anaconda, Windsurf (Devin)  |
+
+---
+ 
+## 🚀 Estado del proyecto
+ 
+| Fase | Estado |
+|------|--------|
+| Limpieza y preprocesado | ✅ |
+| EDA | ✅ |
+| Clustering K-Means k=7 | ✅ |
+| Modelo recomendador content-based | ✅ |
+| Dashboard Power BI 5 páginas | ✅ |
+| Aplicación web Flask | ✅ |
 
 ---
 
