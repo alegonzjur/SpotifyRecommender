@@ -62,7 +62,7 @@ El análisis exploratorio revela los patrones principales del catálogo musical:
 - El dataset está **balanceado por género**: aproximadamente 1.000 canciones por género
 - Solo el **8.5% del catálogo** es contenido explícito
 
-![ResumenGeneral](../reports/figures/db_resumen.png)
+![ResumenGeneral](/reports/figures/db_resumen.png)
 
 ---
 ## 🔵 Clustering
@@ -82,7 +82,7 @@ Segmentación del catálogo en 7 clusters mediante **K-Means** sobre las 9 featu
 | 5       | Rock & Intenso           | Máxima energy, loudness y tempo más altos |
 | 6       | Spoken Word & Rap        | Muy alto speechiness, alta acousticness   |
 
-![Clusters](../reports/figures/db_cluster.png)
+![Clusters](/reports/figures/db_cluster.png)
 
 ---
 
